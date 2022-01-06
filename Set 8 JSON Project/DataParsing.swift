@@ -13,7 +13,9 @@ class FetchData : ObservableObject{
     
     // replace func getData() with initializer so that the object automatically loads data
     init(){
-        guard let url = URL(string: "https://celebrity-bucks.p.rapidapi.com/birthdays/JSON/x_rapidapi-host=celebrity-bucks.p.rapidapi.com/x_rapidapi-key=ab85ebd589msh4b8f10eaab93246p1de429jsn679da9e74739") else {return}
+        guard let url = URL(string: "https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity/nationality='US'/x_rapidapi-host='celebrity-by-api-ninjas.p.rapidapi.com'/x_rapidapi-key='ab85ebd589msh4b8f10eaab93246p1de429jsn679da9e74739'"
+                            
+) else {return}
         
         URLSession.shared.dataTask(with: url) { (data, response, erros) in
             //gets data and convert to string
@@ -36,13 +38,13 @@ class FetchData : ObservableObject{
 
 struct Response: Codable{
     var totalResults : Int = 0
-    var birthdays : [Birthdays] = [Birthdays]()
+    var items : [Item] = [Item]()
     
 }
 
-struct Birthdays : Codable{
+struct Item : Codable{
     var name : String?
-    var dob : String?
+    var birthdy : String?
     var age : String?
 }
 
