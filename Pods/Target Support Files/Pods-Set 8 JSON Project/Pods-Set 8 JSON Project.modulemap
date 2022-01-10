@@ -1,0 +1,6 @@
+framework module Pods_Set_8_JSON_Project {
+  umbrella header "Pods-Set 8 JSON Project-umbrella.h"
+
+  export *
+  module * { export * }
+}
