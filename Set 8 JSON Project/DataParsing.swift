@@ -9,11 +9,13 @@ import Foundation
 
 class FetchData : ObservableObject{
     
+    var month : String
+    var day : String
     @Published var responses = Response()
     
     // replace func getData() with initializer so that the object automatically loads data
     init(){
-        guard let url = URL(string: "https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity/nationality='US'/x_rapidapi-host='celebrity-by-api-ninjas.p.rapidapi.com'/x_rapidapi-key='ab85ebd589msh4b8f10eaab93246p1de429jsn679da9e74739'"
+        guard let url = URL(string: "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
                             
 ) else {return}
         
@@ -37,20 +39,23 @@ class FetchData : ObservableObject{
 }
 
 struct Response: Codable{
-    var totalResults : Int = 0
-    var items : [Item] = [Item]()
+    var births : [Birth] = [Birth]()
     
 }
 
-struct Item : Codable{
-    var name : String?
-    var birthdy : String?
+struct Birth : Codable{
+    var title : String?
+    var thumbnail : [Thumbnail] = [Thumbnail]()
     var age : String?
+}
+
+struct Thumbnail : Codable{
+    var source : URL?
 }
 
 // add an extension to the article struct so that we can use an array of articles
 // to dynamically create List.
-extension Birthdays: Identifiable{
-    var id: String {return name!}
+extension Birth: Identifiable{
+    var id: String {return title!}
 }
 
