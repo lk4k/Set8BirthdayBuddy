@@ -9,12 +9,10 @@ import Foundation
 
 class FetchData : ObservableObject{
     
-    var month : String
-    var day : String
     @Published var responses = Response()
     
     // replace func getData() with initializer so that the object automatically loads data
-    init(){
+    init(month: Int, day: Int){
         guard let url = URL(string: "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
                             
 ) else {return}
@@ -44,9 +42,14 @@ struct Response: Codable{
 }
 
 struct Birth : Codable{
-    var title : String?
+    var text : String?
+    var pages : [Page] = [Page]()
+    var year : String?
+}
+
+struct Page : Codable {
+    var displaytitle : String?
     var thumbnail : [Thumbnail] = [Thumbnail]()
-    var age : String?
 }
 
 struct Thumbnail : Codable{
@@ -56,6 +59,6 @@ struct Thumbnail : Codable{
 // add an extension to the article struct so that we can use an array of articles
 // to dynamically create List.
 extension Birth: Identifiable{
-    var id: String {return title!}
+    var id: String {return pages[0].displaytitle!}
 }
 
