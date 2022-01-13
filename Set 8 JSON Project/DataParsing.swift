@@ -12,7 +12,7 @@ class FetchData : ObservableObject{
     @Published var responses = Response()
     
     // replace func getData() with initializer so that the object automatically loads data
-    init(month: Int, day: Int){
+    init(month: String, day: String){
         guard let url = URL(string: "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
                             
 ) else {return}
@@ -44,12 +44,12 @@ struct Response: Codable{
 struct Birth : Codable{
     var text : String?
     var pages : [Page] = [Page]()
-    var year : String?
+    var year : Int?
 }
 
 struct Page : Codable {
     var displaytitle : String?
-    var thumbnail : [Thumbnail] = [Thumbnail]()
+    var thumbnail : Thumbnail = Thumbnail()
 }
 
 struct Thumbnail : Codable{
