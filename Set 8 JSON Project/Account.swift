@@ -64,5 +64,13 @@ enum Day: String, CaseIterable, Identifiable{
 struct Account : Identifiable {
     var month : Month = Month.Jan
     var day : Day = Day.d1
+    var userName : String
     let id = UUID()
+    
+    init(month : Month = Month.Jan, day : Day = Day.d1, userName : String = "Please Enter Name") {
+        self.month = month
+        self.day = day
+        self.userName = userName
+    }
 }
+

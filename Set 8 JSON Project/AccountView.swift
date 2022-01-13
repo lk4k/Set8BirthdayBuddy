@@ -12,8 +12,7 @@ struct AccountView: View {
     //Creates an instance of an account to use when called by contentview
     @Binding var account : Account
     //Creates an instance of fetchData, which will be used to pull the information parsed from the API
-   // FIGURE OUT HOW TO CONNECT NUMBER OF DAY AND MONTH FROM ACCOUNT TO THE NUMBERS USED TO PARSE DATA
-    @StateObject var fetchData = FetchData(month: "01", day: "13")
+    @StateObject var fetchData : FetchData
     
     var body: some View {
         
@@ -68,6 +67,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(account: Binding.constant(Account()))
+        AccountView(account: Binding.constant(Account(userName: "Bob")), fetchData: FetchData(month: "01", day: "02"))
     }
 }
