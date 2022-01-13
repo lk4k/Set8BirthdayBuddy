@@ -18,6 +18,7 @@
 		625C4D1327909B2800AD726F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D1227909B2700AD726F /* AccountView.swift */; };
 		625C4D1527909C1B00AD726F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D1427909C1B00AD726F /* Account.swift */; };
 		625C4D172790D56800AD726F /* AccountTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D162790D56800AD726F /* AccountTopView.swift */; };
+		625C4D192790D91A00AD726F /* BirthdayBuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D182790D91A00AD726F /* BirthdayBuddyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		625C4D1227909B2700AD726F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		625C4D1427909C1B00AD726F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		625C4D162790D56800AD726F /* AccountTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTopView.swift; sourceTree = "<group>"; };
+		625C4D182790D91A00AD726F /* BirthdayBuddyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayBuddyView.swift; sourceTree = "<group>"; };
 		8CCED1B520F264FDD878E0D4 /* Pods-Set 8 JSON Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Set 8 JSON Project.debug.xcconfig"; path = "Target Support Files/Pods-Set 8 JSON Project/Pods-Set 8 JSON Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				625C4CEB2784B7A400AD726F /* Preview Content */,
 				625C4D102786210C00AD726F /* DataParsing.swift */,
 				625C4D1227909B2700AD726F /* AccountView.swift */,
+				625C4D182790D91A00AD726F /* BirthdayBuddyView.swift */,
 				625C4D1427909C1B00AD726F /* Account.swift */,
 				625C4D162790D56800AD726F /* AccountTopView.swift */,
 			);
@@ -345,6 +348,7 @@
 				625C4D112786210C00AD726F /* DataParsing.swift in Sources */,
 				625C4CE82784B79F00AD726F /* ContentView.swift in Sources */,
 				625C4CE62784B79F00AD726F /* Set_8_JSON_ProjectApp.swift in Sources */,
+				625C4D192790D91A00AD726F /* BirthdayBuddyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

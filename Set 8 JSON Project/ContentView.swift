@@ -21,17 +21,16 @@ struct ContentView: View {
     
     
     var body: some View {
-        Text("AHH")
-//        NavigationView {
-//            List(accounts.indices){
-//                index in
-//                NavigationLink(
-//                    destination: AccountView(account: self.$accounts[index], fetchData: FetchData(month: "01", day: "13"),
-//                                             label: {
-//                                                AccountTopView()
-//                                             })
-//            })
-//        }
+        NavigationView {
+            List(accounts.indices){
+                index in
+                NavigationLink(
+                    destination: AccountView(account: self.$accounts[index]),
+                    label: {
+                        AccountTopView()
+                    })
+            }
+        }
     }
 }
 
