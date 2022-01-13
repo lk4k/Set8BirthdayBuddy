@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		625C4CF82784B7A400AD726F /* Set_8_JSON_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4CF72784B7A400AD726F /* Set_8_JSON_ProjectTests.swift */; };
 		625C4D032784B7A400AD726F /* Set_8_JSON_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D022784B7A400AD726F /* Set_8_JSON_ProjectUITests.swift */; };
 		625C4D112786210C00AD726F /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D102786210C00AD726F /* DataParsing.swift */; };
+		625C4D1327909B2800AD726F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D1227909B2700AD726F /* AccountView.swift */; };
+		625C4D1527909C1B00AD726F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C4D1427909C1B00AD726F /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		625C4D022784B7A400AD726F /* Set_8_JSON_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_8_JSON_ProjectUITests.swift; sourceTree = "<group>"; };
 		625C4D042784B7A400AD726F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		625C4D102786210C00AD726F /* DataParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
+		625C4D1227909B2700AD726F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		625C4D1427909C1B00AD726F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		8CCED1B520F264FDD878E0D4 /* Pods-Set 8 JSON Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Set 8 JSON Project.debug.xcconfig"; path = "Target Support Files/Pods-Set 8 JSON Project/Pods-Set 8 JSON Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +89,6 @@
 				8CCED1B520F264FDD878E0D4 /* Pods-Set 8 JSON Project.debug.xcconfig */,
 				12A9CC9856B4E563E895D0A0 /* Pods-Set 8 JSON Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +131,8 @@
 				625C4CEE2784B7A400AD726F /* Info.plist */,
 				625C4CEB2784B7A400AD726F /* Preview Content */,
 				625C4D102786210C00AD726F /* DataParsing.swift */,
+				625C4D1227909B2700AD726F /* AccountView.swift */,
+				625C4D1427909C1B00AD726F /* Account.swift */,
 			);
 			path = "Set 8 JSON Project";
 			sourceTree = "<group>";
@@ -331,6 +336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625C4D1527909C1B00AD726F /* Account.swift in Sources */,
+				625C4D1327909B2800AD726F /* AccountView.swift in Sources */,
 				625C4D112786210C00AD726F /* DataParsing.swift in Sources */,
 				625C4CE82784B79F00AD726F /* ContentView.swift in Sources */,
 				625C4CE62784B79F00AD726F /* Set_8_JSON_ProjectApp.swift in Sources */,
