@@ -10,16 +10,11 @@ import struct Kingfisher.KFImage
 
 
 struct BirthdayBuddyView: View {
-    var year: String
-    var month : String
-    var day: String
-    
+    var fetchData : FetchData
     
     
     var body: some View {
         
-        let fetchData : FetchData = FetchData(month: month, day: day)
-
         List(fetchData.responses.births) {
             birth in
             HStack{
@@ -46,6 +41,6 @@ struct BirthdayBuddyView: View {
 
 struct BirthdayBuddyView_Previews: PreviewProvider {
     static var previews: some View {
-        BirthdayBuddyView(year: "2004", month: "12", day: "28")
+        BirthdayBuddyView(fetchData: FetchData(month: "01", day: "04"))
     }
 }
