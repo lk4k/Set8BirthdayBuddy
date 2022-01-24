@@ -10,8 +10,8 @@ import struct Kingfisher.KFImage
 
 
 struct BirthdayBuddyView: View {
-   @StateObject var fetchData : FetchData
     
+    @ObservedObject var fetchData : FetchData
     
     var body: some View {
         
@@ -27,12 +27,10 @@ struct BirthdayBuddyView: View {
                 }
                 
                 //List displays a photo of the notable person
-                KFImage(birth.pages[0].thumbnail.source ?? URL(string :"https://cdn.mos.cms.futurecdn.net/PuXipAW3AXUzUJ4uYyxPKC-1200-80.jpg"))
+                KFImage(URL(string: birth.pages[0].thumbnail.source ?? "") ?? URL(string :"https://cdn.mos.cms.futurecdn.net/PuXipAW3AXUzUJ4uYyxPKC-1200-80.jpg"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 50, alignment: .center)
-                
-                
             }
             
         }
@@ -41,6 +39,6 @@ struct BirthdayBuddyView: View {
 
 struct BirthdayBuddyView_Previews: PreviewProvider {
     static var previews: some View {
-        BirthdayBuddyView(fetchData: FetchData(month: "01", day: "04"))
+        BirthdayBuddyView(fetchData: FetchData())
     }
 }

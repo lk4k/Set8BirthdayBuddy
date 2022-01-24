@@ -9,6 +9,10 @@ import SwiftUI
 
 struct AccountView: View {
     @State private var birthdate = Date()
+    @State private var showSheet = false
+    @State private var month : String = "01"
+    @State private var day : String = "01"
+    @ObservedObject var fetchData : FetchData = FetchData()
     
     var body: some View {
         
@@ -30,27 +34,22 @@ struct AccountView: View {
                 formatter.dateFormat = "yyyy"
                 let year = formatter.string(from: date)
                 formatter.dateFormat = "MM"
-                let month = formatter.string(from: date)
+                self.month = formatter.string(from: date)
                 formatter.dateFormat = "dd"
-                let day = formatter.string(from: date)
-                print("date \(year) \(month) \(day)")
+                self.day = formatter.string(from: date)
+                print("date \(year) \(self.month) \(self.day)")
                 
+                self.fetchData.parseData(month: month, day: day)
+                self.showSheet = true
                 
-                NavigationView{
-                    
-                   
-                    NavigationLink(
-                        destination:  BirthdayBuddyView(fetchData: FetchData(month: month, day: day)),
-                        label: {
-                            Text("Results")
-                        })
-                }
                 
             }, label: {
                 Text("Find your Best Buddies!")
             })
             
-        }
+        }.sheet(isPresented: $showSheet, content: {
+            BirthdayBuddyView(fetchData: fetchData)
+        })
     }
 }
 

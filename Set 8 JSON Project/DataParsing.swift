@@ -12,20 +12,38 @@ class FetchData : ObservableObject{
     @Published var responses = Response()
     
     // replace func getData() with initializer so that the object automatically loads data
-    init(month: String, day: String){
-        guard let url = URL(string: "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
-                            
-) else {return}
+    func parseData(month: String, day: String){
+        
+        print("instantiating Fetchdata")
+        let jsonURLString = "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
+        print(month)
+        print(day)
+        print(jsonURLString)
+        
+        guard let url = URL(string: jsonURLString)
+        else {
+            print("Conversion to URL failed")
+            return
+        }
+        print("url constructed")
         
         URLSession.shared.dataTask(with: url) { (data, response, erros) in
             //gets data and convert to string
-            guard let data = data else {return}
+            guard let data = data
+            else {
+                print("Getting data from URL failed")
+                return
+            }
+            
+            print("data constructed")
             
             let decoder = JSONDecoder()
             if let response = try? decoder.decode(Response.self, from: data) {
                 DispatchQueue.main.async {
                     self.responses = response
                 }
+            } else{
+                print("JSON decoding failed")
             }
             
             
@@ -53,7 +71,7 @@ struct Page : Codable {
 }
 
 struct Thumbnail : Codable{
-    var source : URL?
+    var source : String?
 }
 
 // add an extension to the article struct so that we can use an array of articles
