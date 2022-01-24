@@ -10,7 +10,7 @@ import struct Kingfisher.KFImage
 
 
 struct BirthdayBuddyView: View {
-    var fetchData : FetchData
+   @StateObject var fetchData : FetchData
     
     
     var body: some View {

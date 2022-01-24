@@ -16,9 +16,9 @@ struct AccountView: View {
             Text("Enter Your Birthday")
                 .font(.largeTitle)
             DatePicker("Enter your birthday", selection: $birthdate)
-            .datePickerStyle(GraphicalDatePickerStyle())
-            .frame(maxHeight: 400)
-        
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .frame(maxHeight: 400)
+            
             Button(action: {
                 let dateString = "\(birthdate.description.replacingOccurrences(of: "+0000", with: ""))UTC"
                 
@@ -35,7 +35,10 @@ struct AccountView: View {
                 let day = formatter.string(from: date)
                 print("date \(year) \(month) \(day)")
                 
+                
                 NavigationView{
+                    
+                   
                     NavigationLink(
                         destination:  BirthdayBuddyView(fetchData: FetchData(month: month, day: day)),
                         label: {
