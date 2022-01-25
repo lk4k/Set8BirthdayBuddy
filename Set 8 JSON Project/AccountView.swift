@@ -10,8 +10,8 @@ import SwiftUI
 struct AccountView: View {
     @State private var birthdate = Date()
     @State private var showSheet = false
-    @State private var month : String = "01"
-    @State private var day : String = "01"
+    @State private var month : String = "00"
+    @State private var day : String = "00"
     @ObservedObject var fetchData : FetchData = FetchData()
     
     var body: some View {
