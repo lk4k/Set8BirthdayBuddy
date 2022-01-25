@@ -16,16 +16,13 @@ class FetchData : ObservableObject{
         
         print("instantiating Fetchdata")
         let jsonURLString = "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/\(month)/\(day)"
-        print(month)
-        print(day)
         print(jsonURLString)
         
         guard let url = URL(string: jsonURLString)
         else {
-            print("Conversion to URL failed")
             return
         }
-        print("url constructed")
+        
         
         URLSession.shared.dataTask(with: url) { (data, response, erros) in
             //gets data and convert to string
@@ -34,6 +31,9 @@ class FetchData : ObservableObject{
                 print("Getting data from URL failed")
                 return
             }
+            
+            guard var dataAsString = String(data: data, encoding: .utf8) else {return}
+            print(dataAsString)
             
             print("data constructed")
             
@@ -61,13 +61,13 @@ struct Response: Codable{
 
 struct Birth : Codable{
     var text : String?
-    var pages : [Page] = [Page]()
+    var pages : [Page?] = [Page]()
     var year : Int?
 }
 
 struct Page : Codable {
-    var displaytitle : String?
-    var thumbnail : Thumbnail = Thumbnail()
+    var pageid: Int?
+    var thumbnail : Thumbnail? = Thumbnail()
 }
 
 struct Thumbnail : Codable{
@@ -77,6 +77,6 @@ struct Thumbnail : Codable{
 // add an extension to the article struct so that we can use an array of articles
 // to dynamically create List.
 extension Birth: Identifiable{
-    var id: String {return pages[0].displaytitle!}
+    var id: String {return text!}
 }
 
