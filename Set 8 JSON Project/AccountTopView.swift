@@ -9,15 +9,14 @@ import SwiftUI
 
 struct AccountTopView: View {
    
-    var account = Account()
+    @State private var account = Account()
     
     var body: some View {
             HStack{
-                Text(account.userName)
+                TextField("username", text: $account.userName)
             }
-            
-        
     }
+    
 }
 
 
