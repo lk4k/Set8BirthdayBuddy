@@ -27,13 +27,15 @@ struct AccountView: View {
             DatePicker("Enter your birthday", selection: $birthdate)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .frame(maxHeight: 400)
+                .background(Color.init(red: 2, green: 1, blue: 0))
+            
             
             Button(action: {
                 
-            //This alters birthdate.description into the correct format needed to use DateFormatter.
+                //This alters birthdate.description into the correct format needed to use DateFormatter.
                 let dateString = "\(birthdate.description.replacingOccurrences(of: "+0000", with: ""))UTC"
                 
-            //The DateFormatter disects the dateString and assigns the dates as strings to their respective variables
+                //The DateFormatter disects the dateString and assigns the dates as strings to their respective variables
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss 'UTC'"
                 guard let date = formatter.date(from: dateString) else {return}
@@ -54,7 +56,7 @@ struct AccountView: View {
                 
             }, label: {
                 Text("Find your Best Buddies!")
-            })
+            }).background(Color.init(red: 0.5, green: 0.5, blue: 0.5))
             
         }.sheet(isPresented: $showSheet, content: {
             BirthdayBuddyView(fetchData: fetchData)
@@ -65,5 +67,7 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView()
+        
+        
     }
 }

@@ -29,7 +29,7 @@ struct ContentView: View {
                     destination: AccountView(),
                     label: {
                         AccountTopView()
-                    })
+                    }).background(Color.init(red: 0.5, green: 0.5, blue: 0.5))
             }
             
         }

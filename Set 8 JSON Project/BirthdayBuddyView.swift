@@ -21,10 +21,10 @@ struct BirthdayBuddyView: View {
             HStack{
                 VStack{
                     //Displays the name of the notable person
-                    Text(birth.text ?? "")
+                    Text("Name: \(birth.text ?? "")")
                     
                     //Displays the age of the notable person
-                    Text("\(2022 - (birth.year ?? 2022))")
+                    Text("Age: \(2022 - (birth.year ?? 2022))")
                 }
                 
                 //List displays a photo of the notable person
