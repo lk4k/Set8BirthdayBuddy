@@ -2,7 +2,7 @@
 //  AccountView.swift
 //  Set 8 JSON Project
 //
-//  Created by Lauren Kelz (student LM) on 1/13/22.
+//  Created by Claire Wang (student LM) on 1/13/22.
 //
 
 import SwiftUI

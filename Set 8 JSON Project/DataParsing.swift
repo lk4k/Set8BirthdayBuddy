@@ -11,7 +11,11 @@ class FetchData : ObservableObject{
     
     @Published var responses = Response()
     
-    // replace func getData() with initializer so that the object automatically loads data
+    //The getData() initializer was replaced func parseData() so that the object automatically loads data with the user's selected information
+    //Name: parseData
+    //Description: This function parses the data given by our JSON formatted API url.
+    //Parameters: month - month of user birthday, day - day of user birthday
+    //Return: Gives parsed data
     func parseData(month: String, day: String){
         
         print("instantiating Fetchdata")
@@ -54,6 +58,7 @@ class FetchData : ObservableObject{
     
 }
 
+//The following structs all pull data from the decoded JSON inforamtion that we wanted to use
 struct Response: Codable{
     var births : [Birth] = [Birth]()
     
@@ -74,8 +79,7 @@ struct Thumbnail : Codable{
     var source : String?
 }
 
-// add an extension to the article struct so that we can use an array of articles
-// to dynamically create List.
+// An extension added to the birth struct so that we can use an array of births to dynamically create List.
 extension Birth: Identifiable{
     var id: String {return text!}
 }

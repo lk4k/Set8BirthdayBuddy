@@ -2,23 +2,26 @@
 //  ContentView.swift
 //  Set 8 JSON Project
 //
-//  Created by Lauren Kelz (student LM) on 1/4/22.
+//  Created by Megan Murray (student LM) on 1/4/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     
+    //Creates 5 avaliable slots for birthday accounts
     @State var accounts : [Account] = [
-        Account(userName: "Bob"),
-        Account(userName: "Jen"),
-        Account(userName: "Nate"),
-        Account(userName: "Hannah")
+        Account(),
+        Account(),
+        Account(),
+        Account(),
+        Account()
     ]
 
     
     
     var body: some View {
+        //Leads to the view that will prompt the user to enter their birthday information
         NavigationView {
             List(accounts.indices){
                 index in

@@ -15,6 +15,7 @@ struct BirthdayBuddyView: View {
     
     var body: some View {
         
+        //list of responses from parsed JSON information given the user's birthday
         List(fetchData.responses.births) {
             birth in
             HStack{

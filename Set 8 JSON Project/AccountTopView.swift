@@ -2,7 +2,7 @@
 //  AccountTopView.swift
 //  Set 8 JSON Project
 //
-//  Created by Lauren Kelz (student LM) on 1/13/22.
+//  Created by Ella Kesler (student LM) on 1/13/22.
 //
 
 import SwiftUI
@@ -13,6 +13,7 @@ struct AccountTopView: View {
     
     var body: some View {
             HStack{
+                //allows the user to type int their name
                 TextField("username", text: $account.userName)
             }
     }
