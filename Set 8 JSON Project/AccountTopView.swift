@@ -12,9 +12,9 @@ struct AccountTopView: View {
     @State private var account = Account()
     
     var body: some View {
-            HStack{
+        HStack {
                 //allows the user to type int their name
-                TextField("username", text: $account.userName)
+                TextField("username", text: $account.userName).foregroundColor(.white)
             }
     }
     

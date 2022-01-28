@@ -21,10 +21,10 @@ struct BirthdayBuddyView: View {
             HStack{
                 VStack{
                     //Displays the name of the notable person
-                    Text("Name: \(birth.text ?? "")")
+                    Text("Name: \(birth.text ?? "")").foregroundColor(.white)
                     
                     //Displays the age of the notable person
-                    Text("Age: \(2022 - (birth.year ?? 2022))")
+                    Text("Age: \(2022 - (birth.year ?? 2022))").background(Color.init(red: 217/255, green: 210/255, blue: 233/255)).foregroundColor(.white)
                 }
                 
                 //List displays a photo of the notable person
@@ -32,7 +32,9 @@ struct BirthdayBuddyView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 50, alignment: .center)
-            }
+                    .cornerRadius(10.0)
+            }.background(Color.init(red: 217/255, green: 210/255, blue: 233/255))
+            .cornerRadius(5.0)
             
         }
     }

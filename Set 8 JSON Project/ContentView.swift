@@ -17,7 +17,7 @@ struct ContentView: View {
         Account(),
         Account()
     ]
-
+    
     
     
     var body: some View {
@@ -29,7 +29,9 @@ struct ContentView: View {
                     destination: AccountView(),
                     label: {
                         AccountTopView()
-                    }).background(Color.init(red: 0.5, green: 0.5, blue: 0.5))
+                    }).background(Color.init(red: 234/255, green: 171/255, blue: 188/255))
+                    .cornerRadius(10.0)
+                
             }
             
         }
