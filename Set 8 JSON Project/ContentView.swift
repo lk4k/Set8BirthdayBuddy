@@ -15,6 +15,11 @@ struct ContentView: View {
         Account(),
         Account(),
         Account(),
+        Account(),
+        Account(),
+        Account(),
+        Account(),
+        Account(),
         Account()
     ]
     
