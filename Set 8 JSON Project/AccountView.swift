@@ -21,13 +21,13 @@ struct AccountView: View {
         VStack{
             Text("Enter Your Birthday")
                 .font(.largeTitle)
-                .foregroundColor(.white)
+                .foregroundColor(.gray)
             
             //This is a date picker that assigns the user's date to the variable birthdate.
             DatePicker("Enter your birthday", selection: $birthdate)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .frame(maxHeight: 400)
-                .background(Color.init(red: 2, green: 1, blue: 0))
+                .background(Color.init(red: 194/255, green: 219/255, blue: 223/255))
             
             
             Button(action: {
@@ -55,12 +55,14 @@ struct AccountView: View {
                 
                 
             }, label: {
-                Text("Find your Best Buddies!")
-            }).background(Color.init(red: 0.5, green: 0.5, blue: 0.5))
+                Text("Find your Birthday Buddies!")
+                    .foregroundColor(.white)
+            }).background(Color.init(red: 234/255, green: 171/255, blue: 188/255))
             
         }.sheet(isPresented: $showSheet, content: {
             BirthdayBuddyView(fetchData: fetchData)
         })
+        .background(Color.init(red: 249/255, green: 229/255, blue: 218/255))
     }
 }
 
